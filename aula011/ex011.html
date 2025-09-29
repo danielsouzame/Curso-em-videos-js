@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de nacionalidade</title>
+</head>
+<body>
+    <h1>Conferindo brasileiros</h1>
+    De onde voce é: <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+            const pais = document.querySelector('input#txtnac').value.toLowerCase()
+            const res = document.querySelector('div#res')
+         
+            res.innerHTML = `<p>Você nasceu no pais ${pais}.</p>`
+            if (pais !== "brasil") {
+                res.innerHTML += `<p>Você é estrangeiro</p>`
+            } else{
+                res.innerHTML += `<p>Você é Brasileiro</p>`
+            }
+            res.innerHTML += `<p>Todos são importantes.</p>`
+        }
+    </script>
+</body>
+</html>
